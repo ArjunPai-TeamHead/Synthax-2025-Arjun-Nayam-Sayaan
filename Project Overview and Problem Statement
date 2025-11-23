@@ -1,0 +1,21 @@
+# VizPro Max
+
+## 📋 Project Overview
+**VizPro Max** is an advanced, multimodal robotic companion designed to interact 
+with the physical world through sight and sound. By integrating local edge computing
+(YOLOv8, OpenCV) with powerful cloud-based generative AI (Google Gemini 2.0), VizPro 
+Max transcends traditional voice assistants. 
+It functions as an autonomous agent capable of 
+"seeing" its environment, recognizing objects in real-time, and engaging in natural, 
+context-aware conversations. Whether identifying lost items, describing visual scenes,
+or executing movement commands, VizPro Max acts as a friendly, intelligent presence named "Ruma."
+
+## ❓ Problem Statement
+
+Current smart assistants and robotic companions suffer from a "blindness" that limits their utility and emotional connection. They rely entirely on audio or text input, lacking the visual context necessary to understand their physical surroundings.
+
+1.  **Lack of Spatial Awareness:** Traditional assistants cannot answer questions like *"What is in front of me?"* or *"Did I leave my keys here?"* because they lack visual sensors.
+2.  **Disjointed Interaction:** Most DIY robot projects separate vision (identifying objects) from cognition (conversation). They can detect a "
+      chair" but cannot explain *what* the chair looks like or *why* it is there.
+3.  **Latency vs. Intelligence:** Running complex visual analysis locally is often too slow for low-power hardware, 
+      while streaming full video to the cloud causes unacceptable lag. VizPro Max solves this by fusing rapid local object detection with on-demand, high-intelligence cloud analysis.
