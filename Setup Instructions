@@ -1,0 +1,52 @@
+Setup Instructions
+
+Follow these steps to get **VizPro Max** running on your Raspberry Pi.
+
+### 1. Hardware Requirements
+*   **Raspberry Pi:** Model 4B or 5 (4GB+ RAM recommended for smooth YOLO performance).
+*   **Camera:** Raspberry Pi Camera Module 3 (or compatible CSI camera).
+*   **Audio:** USB Microphone and a Speaker (or USB Speakerphone).
+*   **Internet:** Active Wi-Fi connection for API calls.
+
+### 2. System Preparation
+Ensure your Raspberry Pi OS is up to date. Open a terminal and run:
+
+bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install python3-pip python3-venv libatlas-base-dev libportaudio2
+
+
+*Note: If using a virtual environment (recommended):*
+bash
+python3 -m venv ruma-env
+source ruma-env/bin/activate
+
+
+### 3. Install Python Dependencies
+Install the necessary libraries for vision, audio, and AI.
+
+bash
+pip install google-generativeai speechrecognition pyttsx3 opencv-python numpy ultralytics pillow pyaudio
+
+*Note: `picamera2` is typically pre-installed on Raspberry Pi OS (Bookworm). If missing, install via apt: `sudo apt install python3-libcamera`.*
+
+### 4. API Configuration
+You need a Google Gemini API key to power Ruma's intelligence.
+1.  Get an API key from [Google AI Studio](https://aistudio.google.com/).
+2.  Export it as an environment variable (recommended for security):
+    bash
+    export GEMINI_API_KEY="your_actual_api_key_here"
+    
+    *Or, paste it directly into the `ruma_vision_bot.py` script where it says `API_KEY = "..."`.*
+
+### 5. Running the Robot
+Ensure your camera and microphone are connected, then run the script:
+
+bash
+python ruma_vision_bot.py
+
+
+### 6. Troubleshooting Common Issues
+*   **ALSA/Audio Errors:** If you see many ALSA warnings, this is common on Linux. As long as the "Listening..." prompt appears, it is working.
+*   **Camera Not Detected:** Ensure `libcamera` is enabled in `sudo raspi-config` (under Interfaces) and that you are not running another camera app simultaneously.
+*   **Slow Performance:** If the video feed lags, try reducing the resolution in the `picamera2` config line inside the script: `size=(320, 240)`.
