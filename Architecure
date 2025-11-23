@@ -1,0 +1,21 @@
+
+## Architecture
+
+VizPro Max utilizes a **Hybrid Edge-Cloud Architecture**. It balances the need for low-latency reflexes (Edge) with high-level reasoning and visual analysis (Cloud).
+
+### Component Breakdown
+
+#### 1. Perception Layer (Edge)
+*   **Vision Module (Daemon Thread):** Runs continuously in the background to prevent blocking. It captures video via `Picamera2` and performs real-time object detection using the `YOLOv8n` (Nano) model.
+*   **Shared State:** A thread-safe memory buffer protected by a `Lock`. It stores the most recent image frame and the list of detected objects, ensuring the AI always has access to the latest visual data without race conditions.
+
+#### 2. Cognition Layer (Cloud)
+*   **Multimodal Brain:** The system uses **Google Gemini 2.0 Flash Lite** as the reasoning engine.
+*   **Context Fusion:** Unlike standard chatbots, the prompt sent to Gemini is a composite of three data streams:
+    1.  **User Audio:** Transcribed via Google Speech Recognition.
+    2.  **Sensor Data:** Text tags from YOLO (e.g., `["person", "cup"]`).
+    3.  **Visual Data:** The actual image snapshot converted to a PIL object.
+
+#### 3. Interaction Layer (Edge)
+*   **Text-to-Speech (TTS):** Uses `pyttsx3` to give Ruma a voice, processing the AI's textual response locally.
+*   **Action Parser:** The system scans the AI's output for specific command patterns (e.g., `Forward(2)`, `Right(90)`) to trigger physical motor movements.
