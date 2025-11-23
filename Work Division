@@ -6,4 +6,4 @@ The development of VizPro Max was a collaborative effort with specific roles ass
 | :---      | :---                        | :---                                                                                                                                           |
 | **Arjun** | **Software Lead**           | Architected the hybrid AI system, developed the Python codebase (threading, vision loop, Gemini integration), and handled system optimization. |
 | **Nayam** | **Hardware Lead**           | Designed and assembled the robot chassis, managed circuit wiring, integrated sensors/motors, and ensured physical stability.                   |
-| **Syaan** | **Procurement & Logistics** | Sourced components (RPi, camera modules, sensors), managed budget/inventory, and researched component compatibility.                           |
+| **Sayaan** | **Procurement & Logistics** | Sourced components (RPi, camera modules, sensors), managed budget/inventory, and researched component compatibility.                           |
