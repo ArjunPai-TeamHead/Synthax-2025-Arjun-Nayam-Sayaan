@@ -55,27 +55,3 @@ A major technical component was the implementation of Python `threading`.
 ### What I Learned
 Building VizPro Max taught me the complexities of **Multimodal AI systems**. I learned that context is everything; an AI is infinitely smarter when it can see what you see. I also gained a deep appreciation for **asynchronous programming**, managing the millisecond-speed of camera frames versus the second-long latency of network API calls.
 
-## 🏗️ Architecture
-
-VizPro Max utilizes a **Hybrid Edge-Cloud Architecture**. It balances the need for low-latency reflexes (Edge) with high-level reasoning and visual analysis (Cloud).
-
-```mermaid
-graph TD
-    subgraph Edge_Raspberry_Pi ["Raspberry Pi (Edge)"]
-        Camera[Camera Module] -->|Raw Frame| VisionThread
-        VisionThread[Vision Thread] -->|Inference| YOLO[YOLOv8 Model]
-        YOLO -->|Tags & Bounding Boxes| SharedMem[(Shared Memory)]
-        Camera -->|Latest Frame| SharedMem
-        
-        Mic[Microphone] -->|Audio| MainThread
-        MainThread[Main Control Loop] -->|Read| SharedMem
-        MainThread -->|Text Response| Speaker[Speaker / TTS]
-        MainThread -->|Motor Commands| Motors[Motor Controllers]
-    end
-
-    subgraph Cloud_Google ["Google Cloud"]
-        Gemini[Gemini 2.0 Flash Lite]
-    end
-
-    MainThread -->|User Text + YOLO Tags + Image| Gemini
-    Gemini -->|AI Response (Text/Action)| MainThread
