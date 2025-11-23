@@ -1,0 +1,19 @@
+⚖️ AI Usage, Assets & Licenses
+Artificial Intelligence Models:
+
+Google Gemini 2.0 Flash Lite: Utilized via the Google Generative AI SDK as the primary cognitive engine for natural language processing, reasoning, and visual analysis.
+YOLOv8 (Ultralytics): Implemented for high-speed, real-time object detection on the edge device (Raspberry Pi).
+Datasets:
+
+COCO Dataset: The YOLOv8n model used in this project is pre-trained on the Common Objects in Context (COCO) dataset, allowing it to recognize 80 standard object classes (e.g., person, cup, chair) out of the box.
+Third-Party Assets & Libraries:
+
+OpenCV: Used for image processing and frame manipulation.
+Picamera2: Official library used for low-level control of the Raspberry Pi Camera Module.
+SpeechRecognition: Used as a wrapper to interface with audio input streams.
+pyttsx3: Used for offline text-to-speech synthesis.
+Licensing:
+
+YOLOv8: Distributed under the AGPL-3.0 License.
+Google Generative AI SDK: Distributed under the Apache 2.0 License.
+OpenCV: Distributed under the Apache 2.0 License.
