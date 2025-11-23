@@ -1,0 +1,20 @@
+💻 Tech Stack
+
+Hardware
+*   **Core:** Raspberry Pi (4 or 5 recommended)
+*   **Vision:** Raspberry Pi Camera Module (via Picamera2)
+*   **Audio:** USB Microphone & Speaker
+*   **Sensors:** Motor drivers/sensors (for movement execution)
+
+Software & Languages
+*   **Language:** Python 3.9+
+*   **OS:** Raspberry Pi OS (Bookworm/Bullseye)
+
+Artificial Intelligence
+*   **Generative Model:** Google Gemini 2.0 Flash Lite (Multimodal LLM)
+*   **Object Detection:** Ultralytics YOLOv8 (Nano model for edge performance)
+
+Key Libraries
+*   **Vision:** `opencv-python`, `picamera2`, `numpy`, `pillow`
+*   **Audio/Voice:** `speechrecognition`, `pyttsx3`
+*   **Concurrency:** Python `threading` (Standard Library)
