@@ -15,7 +15,7 @@ RIGHT_FWD = 2
 RIGHT_REV = 3
 
 # Servo channels
-SERVO_CHANNELS = [4,5,6,7,8,9,10,11]
+SERVO_CHANNELS = [4,5,6,7,8,9]
 
 def set_motor(channel, duty):
     duty = max(0, min(100, duty))
